@@ -44,7 +44,28 @@ In virtual reality, we don't define oracle as we can do as usual with assertion 
 We use instead petri-nets to define oracle because they need to be checked each time the interaction is trigger.
 
 
-An oracle has this form in the petri-nets, we define the initial state, it's bassicaly when you lanch the unity project we have this state. 
+An oracle has the form of a  petri-nets, we define the initial state, it's bassicaly when you lanch the unity application. Then we move to the first transition, where a sensor listen to the scene each millisecond et wait that a specific action is trigger (by example performing a teleportation), then the transition move to the effector and check that the action detected by the sensor is well effected, if the action failed, a log error appear, if not a simple log to say that the oracle passed.
+
+After that we pass to the final state to finally go back to the initial state.
+
+
+### How to write a new test cases?
+
+
+#### Creation of a game object
+  - Create a child game object to the parent game object
+  - Insert all component that you need to perform your task (Eg : if it's a hand, add openXR component related to)
+  - Create an automated interaction in a monobehavior script
+  - Add the child component script in the game object
+
+#### Create an oracle using Xareus
+ - Add all the component needed to make Xareus works.
+ - Create the sensor in the /Sensor folder
+ - Create the effector in the /Effector folder
+ - Open the Xareus editor and create a new scenario, edit the scenario as the petri-net described above.
+ - Assign the initial and the final state
+ - Affect the sensor and the effector to the transition
+
 
 
 
