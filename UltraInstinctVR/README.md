@@ -68,5 +68,47 @@ After that we pass to the final state to finally go back to the initial state.
 
 
 
+ ### Already implemented oracles and details about the prefab component
+
+ #### Zeno
+ Manage to control each subcomponent, responsible of launching each componenent independantly
+
+ #### Beerus
+
+ Scan the unity scene, and find interactable object, in the scene, the scan stopeed once the ammount of object found drop to zero.
+
+ #### Goku
+
+ Try to carry out a some teleportation in the scene, the oracle pass if goku can teleport, and fail if not
+
+ #### Gohan
+  Try to carry out out teleportation outside the scene, the oracle fail, if the teleportation is done
+
+
+ #### Goten
+
+Try to carry out teleportation in game object, the oracle fail, if the goten can teleport in a game object
+
+
+
+ #### Maradona (it's a reference to maradona hand's god in the 86's FIFA world cup  : https://www.youtube.com/watch?v=-ccNkksrfls)
+
+ Try to select game object, the oracle pass if it's done, fail if not, 
+
+ #### Broly
+
+ It's a cube in the game that will enter in collision with each interactable object, if the colission is done, the oracle pass, fail if not
+
+ #### Vegeta
+
+ VEGETA will select each interactable object, grab and move it to the point (0,0,0), the oracle verify that the object can move by a OpenXR hands.
+ The oracle pass if the action is done and fail if not.
+
+ #### Karin
+Generate the HTML report by reading the log.
+
+
+
+
 
 
