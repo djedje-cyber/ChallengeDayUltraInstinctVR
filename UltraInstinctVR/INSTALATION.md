@@ -1,18 +1,25 @@
-# How to install UltraInstinctVR
-To install UltraInstinctVR, you first need to install Xareus, see this tutorial to install it https://xareus.insa-rennes.fr/tutorials/firstinstallation.html
+# How to Install UltraInstinctVR
 
-<strong>For the Authentication to the repository part, CONTACT Gerry Longfils ON TEAMS</strong>
+To install **UltraInstinctVR**, you first need to install **Xareus**.  
+Follow this tutorial for installation: [Xareus First Installation Guide](https://xareus.insa-rennes.fr/tutorials/firstinstallation.html)
 
+> **Important:**  
+> For authentication to the repository, **contact Gerry Longfils on Teams**.
 
-- Import the prefab in in your asset.
-- Put the gameobject Zeno in the game object tree
+### Installation Steps:
 
+- Import the UltraInstinctVR prefab into your Unity `Assets` folder.
+- Add the **Zeno** GameObject to your scene hierarchy.
 
-# How to run UltraInstinctVR 
- - Run the unity application
- - Let UltraInstinct do his work.
- - Once UltraInstinctVR finish his work,stop the unity project,get the HTML report in the root of the project.
+---
 
+# How to Run UltraInstinctVR
+
+1. Run the Unity application.
+2. Let UltraInstinctVR execute the test cases automatically.
+3. Once UltraInstinctVR has finished:
+   - Stop the Unity project.
+   - Retrieve the generated **HTML report** from the root directory of your project.
 
 
  

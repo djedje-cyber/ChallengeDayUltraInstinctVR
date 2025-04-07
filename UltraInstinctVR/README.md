@@ -1,114 +1,99 @@
-# UltraInstinctVR 
+# UltraInstinctVR
 
-## What is UltraInstinctVR 
+## What is UltraInstinctVR?
 
-UltraInstinctVR is a VR interaction testing framework that simulate interaction in a VR application and check that actions/oracles passed and are done correctly throughout the scenario engine Xareus.
+**UltraInstinctVR** is a VR interaction testing framework that simulates interactions in a VR application and verifies that actions (oracles) are correctly executed throughout the scenario engine **Xareus**.
 
-### What is Xareus?
+---
 
-"Xareus is a set of tools that help creators develop XR applications easily and fast. It aims to put the domain experts in the center of the development process and provide higher abstraction levels than code when necessary. It is compatible with any C# application and can be delivered as a Unity package to facilitate its management."
+## What is Xareus?
 
-references : https://xareus.insa-rennes.fr/?tabs=air
+**Xareus** is a set of tools that helps creators develop XR applications easily and efficiently. It aims to put domain experts at the center of the development process by providing higher abstraction levels than traditional code when needed.  
+It is compatible with any C# application and can be delivered as a Unity package for easier management.
 
+**References**: [Xareus Official Site](https://xareus.insa-rennes.fr/?tabs=air)
 
+---
 
-### What is a interaction in VR ?
-An interaction can be defined as selecting, grabbing, moving objects and players in the virtual world.
+## What is an Interaction in VR?
 
-There exists three types of interaction in VR.
-- Selection : it's selecting game object in the scene, it tell you that after selecting an object you can interact with it.
-- Locomotion : It's the way of moving in the scene, it can be perform by teleportation of movement with the headset in the scene
+An interaction in VR refers to how users engage with the virtual environment, such as selecting, grabbing, or moving objects or characters.
 
-- Manipulation : it's interacting with game object, making actions in the scene with game objects
+There are three main types of interaction in VR:
 
-More and precise informations : https://www.futurelearn.com/info/courses/construct-a-virtual-reality-experience/0/steps/96390
+- **Selection**: Selecting game objects in the scene. This typically precedes interaction with the object.
+- **Locomotion**: Moving within the scene, either via teleportation or physical movement tracked by the headset.
+- **Manipulation**: Interacting with objects by performing actions like grabbing, rotating, or activating them.
 
+**More info**: [FutureLearn: Construct a VR Experience](https://www.futurelearn.com/info/courses/construct-a-virtual-reality-experience/0/steps/96390)
 
-### How test cases are defined in UltraInstinctVR?
+---
 
-To define test cases in virtual reality, we need severals components, that will simulate interactions when the application will run.
+## How Are Test Cases Defined in UltraInstinctVR?
 
-The first component is the parent component, it serve to launch each tests cases one by one independenly.
+To define test cases in VR using UltraInstinctVR, several components are needed to simulate interactions at runtime.
 
-Each, tests cases contains a gameobject that represent a part of the player.
+### Main Structure
 
-By example, Goku represent the headset of the player, its simulates the locomotion instead of Vegeta that represent the hand of the player.
+- A **parent GameObject** is used to launch each test case independently.
+- Each test case includes a **GameObject** representing a part of the VR player.
 
-Each game objects contains OpenXR scripts that unity need to trigger an action on the game object, contains a script that simulate an interaction (by example moving each game object to the center) and a Xareus scenario to verify the oracle.
+For example:
+- **Goku** represents the headset and simulates locomotion.
+- **Vegeta** represents the hand and simulates manipulation.
 
+Each GameObject includes:
+- OpenXR components (used by Unity to trigger interactions)
+- A MonoBehaviour script that simulates a specific interaction (e.g., teleportation)
+- A **Xareus scenario** to verify the oracle
 
-### How de we define oracle with Xareus Tool?
+---
 
-In virtual reality, we don't define oracle as we can do as usual with assertion at the end of the test.
+## How Are Oracles Defined with Xareus?
 
-We use instead petri-nets to define oracle because they need to be checked each time the interaction is trigger.
+Unlike traditional assertions at the end of test cases, oracles in VR are continuously evaluated using **Petri-nets**.
 
+### Oracle Structure
 
-An oracle has the form of a  petri-nets, we define the initial state, it's bassicaly when you lanch the unity application. Then we move to the first transition, where a sensor listen to the scene each millisecond et wait that a specific action is trigger (by example performing a teleportation), then the transition move to the effector and check that the action detected by the sensor is well effected, if the action failed, a log error appear, if not a simple log to say that the oracle passed.
+- **Initial state**: Represents the start of the Unity application.
+- **Transition**: A sensor continuously listens for specific actions (e.g., teleportation).
+- **Effector**: Checks whether the detected action was properly executed.
+  - If it fails, an error is logged.
+  - If successful, a passing log is created.
+- **Final state**: Indicates the end of the check before looping back to the initial state.
 
-After that we pass to the final state to finally go back to the initial state.
+---
 
+## How to Write a New Test Case
 
-### How to write a new test cases?
+### 1. Create a GameObject
+- Create a child GameObject under the parent test manager.
+- Add necessary OpenXR components (e.g., for hand tracking or headset simulation).
+- Write an automated interaction using a MonoBehaviour script.
+- Attach the script to the GameObject.
 
+### 2. Create an Oracle Using Xareus
+- Add all components needed for Xareus to function.
+- Create:
+  - Sensors in the `/Sensor` folder
+  - Effectors in the `/Effector` folder
+- Open the Xareus Editor:
+  - Create a new scenario and design the Petri-net structure.
+  - Assign the initial and final states.
+  - Link sensors and effectors to transitions.
 
-#### Creation of a game object
-  - Create a child game object to the parent game object
-  - Insert all component that you need to perform your task (Eg : if it's a hand, add openXR component related to)
-  - Create an automated interaction in a monobehavior script
-  - Add the child component script in the game object
+---
 
-#### Create an oracle using Xareus
- - Add all the component needed to make Xareus works.
- - Create the sensor in the /Sensor folder
- - Create the effector in the /Effector folder
- - Open the Xareus editor and create a new scenario, edit the scenario as the petri-net described above.
- - Assign the initial and the final state
- - Affect the sensor and the effector to the transition
+## Implemented Oracles & Prefab Components
 
-
-
- ### Already implemented oracles and details about the prefab component
-
- #### Zeno
- Manage to control each subcomponent, responsible of launching each componenent independantly
-
- #### Beerus
-
- Scan the unity scene, and find interactable object, in the scene, the scan stopeed once the ammount of object found drop to zero.
-
- #### Goku
-
- Try to carry out a some teleportation in the scene, the oracle pass if goku can teleport, and fail if not
-
- #### Gohan
-  Try to carry out out teleportation outside the scene, the oracle fail, if the teleportation is done
-
-
- #### Goten
-
-Try to carry out teleportation in game object, the oracle fail, if the goten can teleport in a game object
-
-
-
- #### Maradona (it's a reference to maradona hand's god in the 86's FIFA world cup  : https://www.youtube.com/watch?v=-ccNkksrfls)
-
- Try to select game object, the oracle pass if it's done, fail if not, 
-
- #### Broly
-
- It's a cube in the game that will enter in collision with each interactable object, if the colission is done, the oracle pass, fail if not
-
- #### Vegeta
-
- VEGETA will select each interactable object, grab and move it to the point (0,0,0), the oracle verify that the object can move by a OpenXR hands.
- The oracle pass if the action is done and fail if not.
-
- #### Karin
-Generate the HTML report by reading the log.
-
-
-
-
-
-
+| Name      | Description |
+|-----------|-------------|
+| **Zeno**     | Manages and controls subcomponents; responsible for launching each component independently. |
+| **Beerus**   | Scans the Unity scene and identifies interactable objects. The scan stops once no more objects are found. |
+| **Goku**     | Attempts to teleport within the scene. The oracle passes if successful. |
+| **Gohan**    | Attempts to teleport outside the scene. The oracle fails if teleportation is successful. |
+| **Goten**    | Attempts to teleport into another GameObject. The oracle fails if successful. |
+| **Maradona** | *(Reference to Maradona's "Hand of God" - [Video](https://www.youtube.com/watch?v=-ccNkksrfls))*<br>Tries to select GameObjects. The oracle passes if selection is successful. |
+| **Broly**    | A cube that collides with interactable objects. The oracle passes if collisions occur. |
+| **Vegeta**   | Selects, grabs, and moves interactable objects to position `(0, 0, 0)`. The oracle verifies movement via OpenXR hands. |
+| **Karin**    | Reads logs and generates an HTML test report. |
