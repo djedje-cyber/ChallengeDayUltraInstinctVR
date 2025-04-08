@@ -1,33 +1,47 @@
 # ChallengeDayUltraInstinctVR
 
-## Welcome !
-Hello dear Challenger ! 
+## Welcome!
 
-In this challenge, you will experience a new way of doing software testing for  virtual reality applications I will explain each steps to perform the challenge, don't worry.
+Hello dear Challenger!  
 
-Before explaining steps to solve the challenge, I will  make some reminder to the younger of ourselves.
+In this challenge, you will experience a new way of performing software testing for virtual reality applications.  
+I will explain each step needed to complete the challenge — don't worry!
 
-## Some words about software testing?
+Before diving into the steps to solve the challenge, let's have a little reminder for our younger selves.
 
-### What is software testing?
-Software testing is the process of evaluating and verifying that a software product or application does what it's supposed to do. The benefits of good testing include preventing bugs and improving performance. 
+---
 
-references to IBM : https://www.ibm.com/think/topics/software-testing
+## Some Words About Software Testing
 
-## Why do we test? 
+### What Is Software Testing?
 
-This approach ensures that only quality products are distributed to consumers, which in turn elevates customer satisfaction and trust.
+Software testing is the process of evaluating and verifying that a software product or application does what it's supposed to do.  
+The benefits of good testing include preventing bugs and improving performance.  
 
-references to techtarget: https://www.techtarget.com/whatis/definition/software-testing
+**References**: [IBM on Software Testing](https://www.ibm.com/think/topics/software-testing)
 
+### Why Do We Test?
 
-### In simple words
-It's a way of veryfing that you're coding well, that you don't let bugs when software is in production and avoid the loss of companies's money or even worse life if you work in medical sector, aviation,...,...
+Testing ensures that only quality products are delivered to consumers, which in turn increases customer satisfaction and trust.  
 
-Big reminder : Software testing proof the presence of bugs in a software but doesn't proof the absence of it !
+**References**: [TechTarget on Software Testing](https://www.techtarget.com/whatis/definition/software-testing)
 
-But it's the most effective and simple way of veryfing software ! 
+### In Simple Words
 
-## Content of the challenge
+It's a way to verify that you're coding correctly — making sure no bugs slip into production and helping avoid financial loss or, in critical industries like healthcare or aviation, potentially saving lives.  
 
-In this challenge, you will find two folder, the first one, UltraInstinctVR contains the testing framework that you need to perform the task, everything is explained in the readme of the folder about How it works etc...
+> **Big Reminder**:  
+> Software testing **proves the presence of bugs**, but **not the absence** of them!  
+
+Still, it's the most effective and straightforward method to verify software quality.
+
+---
+
+## Content of the Challenge
+
+In this challenge, you will find two folders:  
+
+- The first one, **UltraInstinctVR**, contains the testing framework you’ll need to complete the task.
+- The second one **vertexformd3d-unity-vr-starkit-main** contains the application that you have to test.
+- Please LOAD   
+- Everything is explained in the README file inside the folder — how it works, setup instructions, etc.
