@@ -1,4 +1,3 @@
-## Recommended: Install the framework on the D:\ drive or an external hard drive.
 
 # **Vertex Form 3D Open Source VR Unity Starter Kit**  
 
@@ -61,3 +60,10 @@ Who doesn't want motivation and support? Become a **Contributor**, a **Stargazer
 *Visit [this page](https://vertexform3d.com/tutorials/) to get up-to-date installation tutorials.*
 
 ---
+
+
+## FOR the challenge day
+
+Load the GamesRoom scene
+
+
