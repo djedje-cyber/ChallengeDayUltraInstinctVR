@@ -66,7 +66,7 @@ Who doesn't want motivation and support? Become a **Contributor**, a **Stargazer
 
 Load the GamesRoom scene
 
-## Links to the original repo
+## Links to the original repo, fork on 02/04/25 
 
 https://github.com/Vertex-Form-3D/vertexform3d-unity-vr-starterkit
 
