@@ -58,16 +58,6 @@
       "scopes": [
         "com.cesium.unity"
       ]
-    },
-    {
-      "name": "Xareus",
-      "url": "https://vrbooking.irisa.fr/npm",
-      "scopes": [
-        "fr.insa.xareus",
-        "fr.inria.unity.tools",
-        "fr.inria.npm_authentication"
-      ],
-      "overrideBuiltIns": false
     }
   ]
 }
