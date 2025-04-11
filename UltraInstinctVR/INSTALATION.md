@@ -15,13 +15,32 @@ If you have problem with ILog after Xareus installation, remove **Version Contro
 ---
 
 # How to Run UltraInstinctVR
-
-1. Run the Unity application.
-2. Let UltraInstinctVR execute the test cases automatically.
-3. The test suite finish when in the log the message "Test suite terminated appears"
-4. Once UltraInstinctVR has finished:
+1. Assign oracle to game object -> see explanation just bellow
+2. Run the Unity application.
+3. Let UltraInstinctVR execute the test cases automatically.
+4. The test suite finish when in the log the message "Test suite terminated appears"
+5. Once UltraInstinctVR has finished:
    - Stop the Unity project.
    - Retrieve the generated **HTML report** from the root directory of your project.
+  
+# Assign oracle to game object
+
+1. Open the scenario editor : Xareus -> Open scenario editor
+2. Open a scenario file, it's a .xml file
+3. Click on the transition
+4. Affect the good game object to sensor and effector
+
+# Game Object to XML File Mapping
+
+| Game Object | XML File                          |
+|-------------|-----------------------------------|
+| GOKU        | Oracle_Teleportation.xml          |
+| GOHAN       | Oracle_Teleportation_Outside.xml  |
+| GOTEN       | Oracle_Teleportation_InObject.xml |
+| MARADONA    | Oracle_Selection.xml              |
+| BROLY       | Oracle_Colission.xml              |
+| VEGETA      | Oracle_MoveObjectToOrigin.xml     |
+
 
 
  
