@@ -42,6 +42,6 @@ Still, it's the most effective and straightforward method to verify software qua
 In this challenge, you will find two folders:  
 
 - The first one, **UltraInstinctVR**, contains the testing framework you’ll need to complete the task.
-- The second one **vertexformd3d-unity-vr-starkit-main** contains the application that you have to test.
+- The second one **vertexformd3d-unity-vr-starkit-main** contains the application where you have to use **UltraInstinctVR** and fix a bug.
 - Please LOAD the **GAMES** scene in Assets/Scenes/Vertex Form 3D Scenes/Database Scenes/Hubs  
 - Everything is explained in the README file inside the folder — how it works, setup instructions, etc.
